@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/FE_NetTruyen/static/css/main.0786fbdd.css",
-    "main.js": "/FE_NetTruyen/static/js/main.9e16796f.js",
+    "main.js": "/FE_NetTruyen/static/js/main.8e5bb9f5.js",
     "static/js/453.ae270511.chunk.js": "/FE_NetTruyen/static/js/453.ae270511.chunk.js",
     "index.html": "/FE_NetTruyen/index.html",
     "main.0786fbdd.css.map": "/FE_NetTruyen/static/css/main.0786fbdd.css.map",
-    "main.9e16796f.js.map": "/FE_NetTruyen/static/js/main.9e16796f.js.map",
+    "main.8e5bb9f5.js.map": "/FE_NetTruyen/static/js/main.8e5bb9f5.js.map",
     "453.ae270511.chunk.js.map": "/FE_NetTruyen/static/js/453.ae270511.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0786fbdd.css",
-    "static/js/main.9e16796f.js"
+    "static/js/main.8e5bb9f5.js"
   ]
 }
