@@ -1,0 +1,5 @@
+.card-body p {
+    white-space: nowrap;       /* Không xuống dòng */
+    overflow: hidden;          /* Ẩn nội dung vượt quá khung */
+    text-overflow: ellipsis;   /* Hiển thị "..." khi quá dài */
+}

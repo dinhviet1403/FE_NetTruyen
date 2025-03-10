@@ -37,25 +37,3 @@
 }
 
 
-
-.dropdown-menu {
-    min-width: 180px; /* Đặt chiều rộng */
-    background-color: #d6b980; /* Màu nền vàng nhạt */
-    border: none; /* Xóa viền */
-    box-shadow: none; /* Xóa đổ bóng */
-    padding: 0; /* Xóa padding mặc định */
-}
-
-.dropdown-item {
-    color: black; /* Màu chữ */
-    font-weight: normal;
-    padding: 10px 15px; /* Tạo khoảng cách đẹp hơn */
-}
-
-.dropdown-item:hover {
-    background-color: rgba(0, 0, 0, 0.1); /* Màu xám nhạt khi hover */
-}
-
-.bg-header {
-    background-color: #d6b980; /* Màu nền vàng nhạt */
-}
