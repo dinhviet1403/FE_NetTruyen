@@ -7,9 +7,9 @@ function Section( {title=null} ) {
    }
 
   return (
-    <div class="bg-light">
-        <div class="container">
-           <p class="p-1">{getTitle(title)}</p>
+    <div className="bg-light">
+        <div className="container">
+           <p className="p-1">{getTitle(title)}</p>
         </div>
      </div> 
   );

@@ -1,52 +1,72 @@
 import "./Header.css";
 import imgLogo from "./favicon.ico";
+import { Link } from "react-router-dom";
 
 function Headers() {
+
+   const data = [
+      { link: "/sreachs/1", text: "Cạnh Kỹ" },
+      { link: "/sreachs/2", text: "Dã Sử" },
+      { link: "/sreachs/3", text: "Đô Thị" },
+      { link: "/sreachs/4", text: "Đồng Nhân" },
+      { link: "/sreachs/5", text: "Huyền Huyễn" },
+      { link: "/sreachs/6", text: "Huyền Nghi" },
+      { link: "/sreachs/", text: "Khoa Huyễn" },
+      { link: "/sreachs/8", text: "Kiếm Hiệp" },
+      { link: "/sreachs/9", text: "Kỳ Ảo" },
+      { link: "/sreachs/10", text: "Light Novel" },
+      { link: "/sreachs/11", text: "Tiên Hiệp" },
+      { link: "/sreachs/12", text: "Võng Du" },
+   ];
+
+   const DropdownMenu = (data) => {
+      return (
+         <ul className="dropdown-menu">
+            {data.map((item, index) => (
+               <li key={index}>
+                  <Link to={item.link} className="dropdown-item">{item.text}</Link>
+               </li>
+            ))}
+         </ul>
+      );
+   };
+
     return (
-        <header class="bg-header p-2" id="header">
-        <div class="container">
-           <div class="row">
-              <nav class="col-md-6 navbar navbar-expand-md navbar-dark">
-                 <div class="container-fluid">
-                    <a class="navbar-brand" href="/FE_NetTruyen">
-                       <img src={imgLogo} alt="NetTruyen" width="30" height="30" class="d-inline-block align-text-top" />
+        <header className="bg-header p-2" id="header">
+        <div className="container">
+           <div className="row">
+              <nav className="col-md-6 navbar navbar-expand-md navbar-dark">
+                 <div className="container-fluid">
+                    <a className="navbar-brand" href="/FE_NetTruyen">
+                       <img src={imgLogo} alt="NetTruyen" width="30" height="30" className="d-inline-block align-text-top" />
                        NetTruyen</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                       <span class="navbar-toggler-icon"></span>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                       <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                       <ul class="navbar-nav">
-                          <li class="nav-item">
-                             <a class="nav-link active" aria-current="page" href="https://example.com">Mới nhất</a>
+                    <div className="collapse navbar-collapse" id="navbarNav">
+                       <ul className="navbar-nav">
+                          <li className="nav-item">
+                             <Link className="nav-link active" aria-current="page" to="/new">Mới nhất</Link>
                           </li>
                           
-                          <li class="nav-item dropdown">
-                             <a class="nav-link dropdown-toggle active" href="https://example.com" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                          <li className="nav-item dropdown">
+                             <a className="nav-link dropdown-toggle active" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
                                  &#9776; Thể Loại
                              </a>
-                             <ul class="dropdown-menu">
-                                 <li><a class="dropdown-item" href="https://example.com">Cạnh Kỹ</a></li>
-                                 <li><a class="dropdown-item" href="https://example.com">Dã Sử</a></li>
-                                 <li><a class="dropdown-item" href="https://example.com">Đô Thị</a></li>
-                                 <li><a class="dropdown-item" href="https://example.com">Đồng Nhân</a></li>
-                                 <li><a class="dropdown-item" href="https://example.com">Huyền Huyễn</a></li>
-                                 <li><a class="dropdown-item" href="https://example.com">Huyền Nghi</a></li>
-                                 <li><a class="dropdown-item" href="https://example.com">Khoa Huyễn</a></li>
-                                 <li><a class="dropdown-item" href="https://example.com">Kiếm Hiệp</a></li>
-                                 <li><a class="dropdown-item" href="https://example.com">Kỳ Ảo</a></li>
-                                 <li><a class="dropdown-item" href="https://example.com">Light Novel</a></li>
-                                 <li><a class="dropdown-item" href="https://example.com">Tiên Hiệp</a></li>
-                                 <li><a class="dropdown-item" href="https://example.com">Võng Du</a></li>
-                             </ul>
-                         </li>                    
+                             {DropdownMenu(data)}
+                         </li>
+
+                         <li className="nav-item">
+                             <a className="nav-link active" href="https://nettruyenx.com/">Truyện Tranh</a>
+                          </li>                    
                        </ul>
                     </div>
                  </div>
               </nav>
-              <div class="col-md-3 ms-auto">
-                 <div class="input-group m-2">
-                    <input type="text" class="form-control" placeholder="Tìm kiếm..." />
-                    <button class="btn bg-white" type="button">🔍</button>
+              <div className="col-md-3 ms-auto">
+                 <div className="input-group m-2">
+                    <input type="text" className="form-control" placeholder="Tìm kiếm..." />
+                    <button className="btn bg-white" type="button">🔍</button>
                  </div>
               </div>
            </div>
