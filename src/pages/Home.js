@@ -1,5 +1,6 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import ListCard from "../Items/ListCard";
+import ListNew from "../Items/ListNew";
 import "./styles/home.css";
 
 const stories = [
@@ -17,40 +18,28 @@ const stories = [
   { "id": 12, "title": "Giải Trí: Mở Vựa Chia Tay...", "image": "https://static2.truyencv.com.vn/images/giai-tri-moi-vua-chia-tay-lien-cung-nu-minh-tinh-vao-khach-san.jpg" }
 ];
 
+const storiesNew = [
+  { id: 1, genre: "Huyền Huyễn", title: "Ta Lại Là Thiên Mệnh Nhân Vật Phản Diện" },
+  { id: 2, genre: "Huyền Huyễn", title: "Người Cùng Ta Đàm Luận Tu Tiên, Ta Hàn Huyên Với Người Khoa Học Kỹ Thuật" },
+  { id: 3, genre: "Huyền Huyễn", title: "Hồng Hoang Chi Công Đức Thành Thánh" },
+  { id: 4, genre: "Huyền Huyễn", title: "Hướng Về Tương Lai Nữ Ma Đầu Huy Kiếm" },
+  { id: 5, genre: "Tiên Hiệp", title: "Gia Tộc Tu Tiên: Ta Có Thể Thăng Cấp Pháp Khí" },
+  { id: 6, genre: "Đô Thị", title: "1976 Dạo Chơi Săn Bắn Bắc Cảnh" },
+  { id: 7, genre: "Huyền Huyễn", title: "Bị Lục Nhĩ Mi Hầu Đánh Chết Sau, Ta Thành Tôn Ngộ Không" },
+  { id: 8, genre: "Đô Thị", title: "Tôi Chỉ Muốn Sống Yên Ổn!" },
+  { id: 9, genre: "Kỳ Ảo", title: "Xuyên Qua Ác Long: Bắt Đầu Quốc Vương Hiến Tế Công Chúa" },
+  { id: 10, genre: "Huyền Huyễn", title: "Tu Tiên: Từ Thu Hoạch Được Không Gian Bất Đầu" }
+];
+
 
 
 const Home = () => {
-  const navigate = useNavigate();
-
-  const handleClick = (link) => {
-    return navigate(link); // Điều hướng đến trang mới
-  };
-
   return (
-    <section className="container mt-4">
-      <div className="border-bottom border-bottom-1 border-secondary mb-2 p-0">
-          <h4 className="fw-bold d-inline-block border-bottom border-bottom-2 border-dark mb-0 pb-2">
-            TRUYỆN HOT 🔄
-          </h4>
-        </div>
-      <div className="row mt-3">
-        {stories.map((story, index) => (
-          <div key={index} className="col-6 col-sm-4 col-md-3 col-lg-2 mb-3 hover-zoom p-2" onClick={() => handleClick(`/story/${story.id}`)}>
-            <div className="card border-0">
-              <img
-                src={story.image}
-                className="card-img-top"
-                alt={story.title}
-                style={{ height: "200px"}}
-              />
-              <div className="card-body p-2 text-center bg-dark text-white">
-                <p className="small">{story.title}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
+    <>
+      <ListCard stories={stories} Title="Truyện Hot" />
+      <ListNew stories={storiesNew} Title="📖 TRUYỆN MỚI CẬP NHẬT" />
+      <ListCard stories={stories} Title="Truyện Hay" />
+    </>
   );
 };
 

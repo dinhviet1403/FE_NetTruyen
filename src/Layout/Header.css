@@ -22,3 +22,11 @@
   .bg-header {
     background-color: #d6b980; /* Màu nền vàng nhạt */
   }
+
+  .custom-input {
+    text-indent: 8px; /* Đẩy text vào bên phải */
+  }
+
+  .tg-bd-2{
+    border: 2px solid !important;
+  }

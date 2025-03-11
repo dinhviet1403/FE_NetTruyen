@@ -1,8 +1,12 @@
+import { useState, useRef } from "react";
 import "./Header.css";
 import imgLogo from "./favicon.ico";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Headers() {
+
+   const [value, setValue] = useState("");
+   const inputRef = useRef(null);
 
    const data = [
       { link: "/sreachs/1", text: "Cạnh Kỹ" },
@@ -31,16 +35,18 @@ function Headers() {
       );
    };
 
+   const Navigate = useNavigate();
+
     return (
         <header className="bg-header p-2" id="header">
         <div className="container">
            <div className="row">
-              <nav className="col-md-6 navbar navbar-expand-md navbar-dark">
+              <nav className="col-lg-6 navbar navbar-expand-lg navbar-dark">
                  <div className="container-fluid">
                     <a className="navbar-brand" href="/FE_NetTruyen">
                        <img src={imgLogo} alt="NetTruyen" width="30" height="30" className="d-inline-block align-text-top" />
                        NetTruyen</a>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <button className="navbar-toggler tg-bd-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                        <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
@@ -63,10 +69,18 @@ function Headers() {
                     </div>
                  </div>
               </nav>
-              <div className="col-md-3 ms-auto">
+              <div className="col-lg-3 ms-auto">
                  <div className="input-group m-2">
-                    <input type="text" className="form-control" placeholder="Tìm kiếm..." />
-                    <button className="btn bg-white" type="button">🔍</button>
+                     <input ref={inputRef} type="text" value={value} onChange={(e) => setValue(e.target.value)} className="form-control custom-input" placeholder="Tìm kiếm..." />
+                     <button 
+                        className="btn bg-white" 
+                        type="button" 
+                        onClick={
+                           () => (
+                              value ? Navigate(`/sreach/name=${value}`) : inputRef.current.focus()
+                           )
+                        }
+                     >🔍</button>
                  </div>
               </div>
            </div>
